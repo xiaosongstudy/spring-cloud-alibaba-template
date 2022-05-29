@@ -9,13 +9,10 @@
     <groupId>life.hopeurl</groupId>
     <version>1.0</version>
   </parent>
-  <artifactId>nacos-producer-one</artifactId>
+  <artifactId>common</artifactId>
   <version>1.0</version>
-  <packaging>jar</packaging>
 
-  <name>nacos-producer-one</name>
-
-
+  <name>common</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -23,30 +20,10 @@
   </properties>
 
   <dependencies>
-    <!-- Spring Boot Begin -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
-    </dependency>
-
-    <!-- Spring Boot End -->
-
-    <!-- Spring Cloud Begin -->
-    <dependency>
-      <groupId>com.alibaba.cloud</groupId>
-      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.alibaba.cloud</groupId>
-      <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-    </dependency>
-    <!-- Spring Cloud End-->
-
     <dependency>
       <groupId>life.hopeurl</groupId>
       <artifactId>common</artifactId>
       <version>1.0</version>
     </dependency>
   </dependencies>
-
 </project>

@@ -1,11 +1,11 @@
 package life.hopeurl.controller;
 
+import com.alibaba.fastjson.JSON;
+import life.hopeurl.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * nacos服务类.<br>
@@ -32,4 +32,20 @@ public class NacosProviderController {
     public String sayHi() {
         return "Hello " + applicationContext.getEnvironment().getProperty("user.name");
     }
+
+    @GetMapping("/multipleParams")
+    public String multipleParams(String username, String password) {
+        return String.format("用户名为%s，密码为%s",username,password);
+    }
+
+    @PostMapping("/postRequestBody")
+    public String postRequestBody(@RequestBody UserVo userVo) {
+        return JSON.toJSONString(userVo);
+    }
+
+    @DeleteMapping("/deleteRequest")
+    public String deleteRequest(String id) {
+        return String.format("当前删除的编号为：%s", id);
+    }
+
 }
